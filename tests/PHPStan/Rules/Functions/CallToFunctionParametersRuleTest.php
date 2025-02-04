@@ -663,6 +663,32 @@ class CallToFunctionParametersRuleTest extends RuleTestCase
 		]);
 	}
 
+	public function testArrayUintersectCallback(): void
+	{
+		$this->analyse([__DIR__ . '/data/array_uintersect.php'], [
+			[
+				'Parameter #3 $data_compare_func of function array_uintersect expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(string, string): string given.',
+				6,
+			],
+			[
+				'Parameter #3 $data_compare_func of function array_uintersect expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(int, int): (literal-string&lowercase-string&non-falsy-string&numeric-string&uppercase-string) given.',
+				14,
+			],
+			[
+				'Parameter #1 $arr1 of function array_uintersect expects array<string>, null given.',
+				20,
+			],
+			[
+				'Parameter #2 $arr2 of function array_uintersect expects array<string>, null given.',
+				21,
+			],
+			[
+				'Parameter #3 $data_compare_func of function array_uintersect expects callable(string, string): int, Closure(string, int): non-empty-string given.',
+				22,
+			],
+		]);
+	}
+
 	public function testPregReplaceCallback(): void
 	{
 		$this->analyse([__DIR__ . '/data/preg_replace_callback.php'], [

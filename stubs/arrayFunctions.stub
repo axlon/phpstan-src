@@ -71,6 +71,18 @@ function array_udiff(
 ): int {}
 
 /**
+ * @template T
+ * @param array<T> $one
+ * @param array<T> $two
+ * @param callable(T, T): int $three
+ */
+function array_uintersect(
+    array $one,
+    array $two,
+    callable $three
+): int {}
+
+/**
  * @param array<array-key, mixed> $value
  * @return ($value is list ? true : false)
  */
