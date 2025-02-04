@@ -37,3 +37,11 @@ array_uintersect(
 	["26","27"],
 	'strcasecmp',
 );
+
+array_uintersect(
+	[100, 200, 300],
+	['200', '300', '400'],
+	function(int $a, string $b): int {
+		return (string) $a <=> $b;
+	},
+);

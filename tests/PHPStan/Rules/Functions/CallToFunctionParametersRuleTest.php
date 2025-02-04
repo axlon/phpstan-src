@@ -641,11 +641,11 @@ class CallToFunctionParametersRuleTest extends RuleTestCase
 	{
 		$this->analyse([__DIR__ . '/data/array_udiff.php'], [
 			[
-				'Parameter #3 $data_comp_func of function array_udiff expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(string, string): string given.',
+				'Parameter #3 $data_comp_func of function array_udiff expects callable(1|2|3, 4|5|6): int, Closure(string, string): string given.',
 				6,
 			],
 			[
-				'Parameter #3 $data_comp_func of function array_udiff expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(int, int): (literal-string&lowercase-string&non-falsy-string&numeric-string&uppercase-string) given.',
+				"Parameter #3 \$data_comp_func of function array_udiff expects callable(1|2|3, 4|5|6): int, Closure(int, int): ('14'|'15'|'16'|'24'|'25'|'26'|'34'|'35'|'36') given.",
 				14,
 			],
 			[
@@ -653,11 +653,11 @@ class CallToFunctionParametersRuleTest extends RuleTestCase
 				20,
 			],
 			[
-				'Parameter #2 $arr2 of function array_udiff expects array<string>, null given.',
+				'Parameter #2 $arr2 of function array_udiff expects array<int>, null given.',
 				21,
 			],
 			[
-				'Parameter #3 $data_comp_func of function array_udiff expects callable(string, string): int, Closure(string, int): non-empty-string given.',
+				'Parameter #3 $data_comp_func of function array_udiff expects callable(string, int): int, Closure(string, int): non-empty-string given.',
 				22,
 			],
 		]);
@@ -667,11 +667,11 @@ class CallToFunctionParametersRuleTest extends RuleTestCase
 	{
 		$this->analyse([__DIR__ . '/data/array_uintersect.php'], [
 			[
-				'Parameter #3 $data_compare_func of function array_uintersect expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(string, string): string given.',
+				'Parameter #3 $data_compare_func of function array_uintersect expects callable(1|2|3, 4|5|6): int, Closure(string, string): string given.',
 				6,
 			],
 			[
-				'Parameter #3 $data_compare_func of function array_uintersect expects callable(1|2|3|4|5|6, 1|2|3|4|5|6): int, Closure(int, int): (literal-string&lowercase-string&non-falsy-string&numeric-string&uppercase-string) given.',
+				"Parameter #3 \$data_compare_func of function array_uintersect expects callable(1|2|3, 4|5|6): int, Closure(int, int): ('14'|'15'|'16'|'24'|'25'|'26'|'34'|'35'|'36') given.",
 				14,
 			],
 			[
@@ -679,11 +679,11 @@ class CallToFunctionParametersRuleTest extends RuleTestCase
 				20,
 			],
 			[
-				'Parameter #2 $arr2 of function array_uintersect expects array<string>, null given.',
+				'Parameter #2 $arr2 of function array_uintersect expects array<int>, null given.',
 				21,
 			],
 			[
-				'Parameter #3 $data_compare_func of function array_uintersect expects callable(string, string): int, Closure(string, int): non-empty-string given.',
+				'Parameter #3 $data_compare_func of function array_uintersect expects callable(string, int): int, Closure(string, int): non-empty-string given.',
 				22,
 			],
 		]);

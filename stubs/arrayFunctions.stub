@@ -58,11 +58,11 @@ function uksort(array &$array, callable $callback): bool
 }
 
 /**
- * @template T of mixed
- *
+ * @template T
+ * @template U
  * @param array<T> $one
- * @param array<T> $two
- * @param callable(T, T): int $three
+ * @param array<U> $two
+ * @param callable(T, U): int $three
  */
 function array_udiff(
     array $one,
@@ -72,9 +72,10 @@ function array_udiff(
 
 /**
  * @template T
+ * @template U
  * @param array<T> $one
- * @param array<T> $two
- * @param callable(T, T): int $three
+ * @param array<U> $two
+ * @param callable(T, U): int $three
  */
 function array_uintersect(
     array $one,
